@@ -13,9 +13,7 @@ def make_converter(match, replacement):
 #     replacements until there are no more opportunities for replacements.
 def apply_converter(converter, string):
     if(string.find(converter['m']) != -1):
-        one = string.find(converter['m'])
-        string = string + string
-        
+         string = string.replace(converter['m'],converter['r'])
+         return string
     else:
         return string
-

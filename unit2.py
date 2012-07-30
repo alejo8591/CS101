@@ -464,3 +464,20 @@ def print_multiplication_table(n):
 #>>> 3 * 1 = 3
 #>>> 3 * 2 = 6
 #>>> 3 * 3 = 9
+# Problem extra set Unit 2
+# Define a procedure weekend which takes a string as its input, and
+# returns the boolean True if it's 'Saturday' or 'Sunday' and False otherwise.
+
+def weekend(day):
+    # your code here
+    if day.capitalize() == 'Saturday' or day.capitalize() == 'Sunday': return True
+    return False
+    
+print weekend('Monday')
+#>>> False
+
+print weekend('Saturday')
+#>>> True
+
+print weekend('July')
+#>>> False

@@ -311,3 +311,156 @@ def median(a,b,c):
 
 #print(median(7,8,7))
 #>>> 7
+# Define a procedure, countdown, that takes a
+# positive whole number as its input, and prints
+# out a countdown from that number to 1,
+# followed by Blastoff!
+# The procedure should not return anything.
+# For this question, you just need to call 
+# the procedure using the line
+# countdown(3)
+# instead of print countdown(3).
+
+def countdown(n):
+    while True:
+        if(n!=1):
+            print n
+            n -=1
+        else:
+            if(n==1):
+                print n
+                print 'Blastoff!'
+                break
+
+#countdown(3)
+#>>> 3
+#>>> 2
+#>>> 1
+#>>> Blastoff!
+
+# .......... Other option ........
+# Define a procedure, countdown, that takes a
+# positive whole number as its input, and prints
+# out a countdown from that number to 1,
+# followed by Blastoff!
+# The procedure should not return anything.
+# For this question, you just need to call 
+# the procedure using the line
+# countdown(3)
+# instead of print countdown(3).
+
+def countdown(n):
+    while True:
+        if(n!=0):
+            print n
+            n -=1
+        else:
+            print 'Blastoff!'
+            break
+
+#countdown(3)
+#>>> 3
+#>>> 2
+#>>> 1
+#>>> Blastoff!
+
+# Define a procedure, find_last, that takes as input
+# two strings, a search string and a target string,
+# and returns the last position in the search string
+# where the target string appears, or -1 if there
+# are no occurences.
+#
+# Example: find_last('aaaa', 'a') returns 3
+
+# Make sure your procedure has a return statement.
+
+def find_last(a,b):
+    if len(b) == 1: 
+        return a.find(b, -1)
+    elif b == "":
+        return len(a)
+    elif len(b) > 1:
+        find_next, find_first, find_lasts = -1, 0, 0
+        while True:
+            if find_lasts != -1:
+                find_first = a.find(b, find_next+1)
+                find_next = a.find(b, find_first+1)
+                find_lasts = a.find(b, find_next+1)
+            else:
+                return find_next     
+    return -1
+#Other option and best option
+
+def find_last(a,b):
+    find_lasts, posit = -1, 0
+    while True:
+        posit = a.find(b, find_lasts+1)
+        if posit == -1: return find_lasts
+        find_lasts = posit
+
+       
+#print find_last('aaaa', 'a')
+#>>> 3
+
+#print find_last('aaaaa', 'aa')
+#>>> 3
+
+#print find_last('aaaa', 'b')
+#>>> -1
+
+#print find_last("111111111", "1")
+#>>> 8
+
+#print find_last("222222222", "")
+#>>> 9
+
+#print find_last("", "3")
+#>>> -1
+
+#print find_last("", "")
+#>>> 0
+
+# 2 GOLD STARS
+
+# Define a procedure, print_multiplication_table,
+# that takes as input a positive whole number, and prints out a multiplication,
+# table showing all the whole number multiplications up to and including the
+# input number. The order in which the equations are printed matters.
+
+# Hint: You can not add an integer and a string, but in homework 1.9
+# you came across a method, str, for turning an integer into a string.
+
+def print_multiplication_table(n):
+    i,j= 0,0
+    while i < n:
+        j = 0
+        i+=1
+        while j < n:
+            j+=1
+            print '%s * %s = %s' %(i, j, i*j)
+            
+            
+def print_multiplication_table(n):
+    i= 1
+    while i <= n:
+        j = 1
+        while j <= n:
+            print '%s * %s = %s' %(i, j, i*j)
+            j+=1
+        i+=1
+#print_multiplication_table(2)
+#>>> 1 * 1 = 1
+#>>> 1 * 2 = 2
+#>>> 2 * 1 = 2
+#>>> 2 * 2 = 4
+
+#print_multiplication_table(3)
+#>>> 1 * 1 = 1
+#>>> 1 * 2 = 2
+#>>> 1 * 3 = 3
+#>>> 2 * 1 = 2
+#>>> 2 * 2 = 4
+#>>> 2 * 3 = 6
+#>>> 3 * 1 = 3
+#>>> 3 * 2 = 6
+#>>> 3 * 3 = 9
